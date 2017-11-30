@@ -1,0 +1,11 @@
+{
+    "name": "tiezhao/qqwry",
+    "description": "qqwry",
+    "authors": [
+        {
+            "name": "tiezhao",
+            "email": "tiezhaowang@163.com"
+        }
+    ],
+    "require": {}
+}
