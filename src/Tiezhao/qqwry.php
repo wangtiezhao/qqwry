@@ -2,6 +2,7 @@
 /*--------------------------------------------------
 ip2address [qqwry.dat]
 --------------------------------------------------*/
+namespace Tiezhao;
 
 class qqwry {
     var $fh; //IP数据库文件句柄
@@ -12,7 +13,7 @@ class qqwry {
 //构造函数
     function __construct($file=null) {
         if($file==null){
-            $file=__DIR__.'../data/qqwry.dat';
+            $file=__DIR__.'/../../data/qqwry.dat';
         }
         $this->fh = fopen($file, 'rb'); //qqwry.dat文件
         $this->first = $this->getLong4();

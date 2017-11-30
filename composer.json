@@ -7,5 +7,9 @@
             "email": "tiezhaowang@163.com"
         }
     ],
-    "require": {}
+    "autoload":{
+        "psr-4" : {
+            "Tiezhao\\" : "src/Tiezhao/"
+        }
+    }
 }
