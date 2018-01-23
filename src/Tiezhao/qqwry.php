@@ -160,6 +160,9 @@ class qqwry {
 
     function get_contry_area_string($ip,$midstring){
         $location=$this->ip2addr($ip);
-        return $location['contry'].$midstring.$location['area'];
+        if (trim($location['area'])!=""){
+            return $location['country'].$midstring.$location['area'];
+        }
+        return $location['country'];
     }
 }

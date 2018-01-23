@@ -11,5 +11,6 @@ for($i=0;$i<100;$i++){
     $long=mt_rand();
     $ip=long2ip($long);
     $res=$qqwry->ip2addr($ip);
-    echo "$ip:{$res['country']}-{$res['area']}\n";
+    echo "$ip:contry {$res['country']} area {$res['area']}\n";
+    echo "信息:".$qqwry->get_contry_area_string($ip,'-')."\n";
 }
