@@ -157,4 +157,9 @@ class qqwry {
     function __destruct() {
         fclose($this->fh);
     }
+
+    function get_contry_area_string($ip,$midstring){
+        $location=$this->ip2addr($ip);
+        return $location['contry'].$midstring.$location['area'];
+    }
 }
