@@ -147,7 +147,8 @@ class qqwry {
 
     //gb2312 to utf-8（去除无信息时显示的CZ88.NET）
         foreach ($location as $k => $v) {
-            $location[$k] = str_replace('CZ88.NET','',iconv('gb2312', 'utf-8', $v));
+            $temp=mb_convert_encoding($v,'UTF-8','gb2312');
+            $location[$k] = str_replace('CZ88.NET','',$temp);
         }
 
         return $location;
@@ -179,14 +180,13 @@ class qqwry {
     }
 
     function uint2ip($u){
+        $arr=[];
+        while($u>0){
+            $temp=(int)($u/256);
+            array_push($arr,$u-$temp*256);
+            $u=$temp;
+        }
 
-        $d = $u%256;
-        $u=$u>>8;
-        $c = $u%256;
-        $u=$u>>8;
-        $b = $u%256;
-        $u=$u>>8;
-        $a = $u;
-        return $a.".".$b.".".$c.".".$d;
+        return (int)$arr[3].".".(int)$arr[2].".".(int)$arr[1].".".(int)$arr[0];
     }
 }
