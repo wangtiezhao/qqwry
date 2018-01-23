@@ -165,4 +165,28 @@ class qqwry {
         }
         return $location['country'];
     }
+
+    function get_contry_area_string_by_uint($u,$midstring){
+        $location=$this->ip2addr($this->uint2ip($u));
+        if (trim($location['area'])!=""){
+            return $location['country'].$midstring.$location['area'];
+        }
+        return $location['country'];
+    }
+
+    function ip2uint($ip){
+       return sprintf("%u",ip2long($ip));
+    }
+
+    function uint2ip($u){
+
+        $d = $u%256;
+        $u=$u>>8;
+        $c = $u%256;
+        $u=$u>>8;
+        $b = $u%256;
+        $u=$u>>8;
+        $a = $u;
+        return $a.".".$b.".".$c.".".$d;
+    }
 }
