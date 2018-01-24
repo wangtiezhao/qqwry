@@ -8,6 +8,7 @@
 require __DIR__.'/../vendor/autoload.php';
 
 $qqwry=new \Tiezhao\qqwry();
+echo $qqwry->ip2uint("119.75.218.77");exit;
 for($i=0;$i<100;$i++){
     $long=mt_rand();
     $ip=long2ip($long);

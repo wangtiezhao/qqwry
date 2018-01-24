@@ -186,7 +186,6 @@ class qqwry {
             array_push($arr,$u-$temp*256);
             $u=$temp;
         }
-
-        return (int)$arr[3].".".(int)$arr[2].".".(int)$arr[1].".".(int)$arr[0];
+        return (isset($arr[3])?(int)$arr[3]:'0').".".(isset($arr[2])?(int)$arr[2]:'0').".".(isset($arr[1])?(int)$arr[1]:'0').".".(isset($arr[0])?(int)$arr[0]:'0');
     }
 }
